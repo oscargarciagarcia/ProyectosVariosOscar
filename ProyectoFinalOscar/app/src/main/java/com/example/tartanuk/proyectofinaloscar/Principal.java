@@ -8,21 +8,34 @@ import android.widget.Button;
 
 public class Principal extends AppCompatActivity {
 
+    Button btn1, btn2;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.principal);
 
         //variables de los botones
-        Button button1 = (Button) findViewById(R.id.button1);
+        btn1 = (Button) findViewById(R.id.btn1);
+        btn2 = (Button) findViewById(R.id.btn2);
 
         //click del boton1
-        button1.setOnClickListener(new View.OnClickListener() {
+        btn1.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
 
-                //Segunda Pantalla
+                //Pantalla Registro
                 Intent miIntent = new Intent(Principal.this, Registro.class);
                 startActivity(miIntent);
+            }
+        });
+
+        //click del boton2
+        btn2.setOnClickListener(new View.OnClickListener(){
+            public void onClick(View v) {
+
+                //Pantalla InicioSesion
+                Intent miIntent1 = new Intent(Principal.this, InicioSesion.class);
+                startActivity(miIntent1);
             }
         });
     }

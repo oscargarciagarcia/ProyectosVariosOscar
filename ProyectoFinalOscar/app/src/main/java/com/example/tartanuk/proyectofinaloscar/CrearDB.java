@@ -9,10 +9,10 @@ import android.database.sqlite.SQLiteOpenHelper;
  */
 public class CrearDB extends SQLiteOpenHelper{
 
-    String cadSQL = "CREATE TABLE IF NOT EXISTS Clientes (" +
+    String cadSQL = "CREATE TABLE IF NOT EXISTS Usuarios (" +
             " id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
-            " nombre TEXT NOT NULL UNIQUE," +
-            " apellido TEXT NOT NULL)";
+            " usuario TEXT NOT NULL," +
+            " contraseña TEXT NOT NULL)";
 
     public CrearDB(Context contexto, String nombre, SQLiteDatabase.CursorFactory almacen, int version){
         super(contexto, nombre, almacen, version);
@@ -25,7 +25,7 @@ public class CrearDB extends SQLiteOpenHelper{
 
     @Override
     public void onUpgrade(SQLiteDatabase bd, int versionAnterior, int versionNueva) {
-        bd.execSQL("DROP TABLE IF EXISTS Clientes");
+        bd.execSQL("DROP TABLE IF EXISTS Usuarios");
 
         bd.execSQL(cadSQL);
     }

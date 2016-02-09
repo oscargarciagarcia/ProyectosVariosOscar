@@ -3,61 +3,46 @@
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     >
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        >
         //TextView Nombre
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView1"
+            android:id="@+id/tv3"
             android:textSize="15px"
-            android:text="Nombre: "
+            android:text="@string/usuarioRegistro"
             />
         //EditText Nombre
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/editText1"
+            android:id="@+id/et1"
             />
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        >
         //TextView Apellido
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView2"
+            android:id="@+id/tv4"
             android:textSize="15px"
-            android:text="Apellido: "
+            android:text="@string/contraseñaregistro"
             />
         //EditText Apellido
         <EditText
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/editText2"
+            android:id="@+id/et2"
             />
-    </LinearLayout>
-    <LinearLayout
+    //Boton Volver a Inicio
+    <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_gravity="center"
-        >
+        android:id="@+id/btn3"
+        android:text="Volver"
+        />
+        //Boton Crear
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/button5"
-            android:text="Crear"
+            android:id="@+id/btn4"
+            android:text="Crear DB"
             />
-        </LinearLayout>
-
 </LinearLayout>

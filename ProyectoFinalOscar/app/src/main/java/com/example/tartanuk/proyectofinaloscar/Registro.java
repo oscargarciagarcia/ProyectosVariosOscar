@@ -1,6 +1,7 @@
 package com.example.tartanuk.proyectofinaloscar;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -15,32 +16,42 @@ import android.widget.Toast;
 public class Registro extends AppCompatActivity {
 
     EditText et1, et2;
-    Button btn1;
+    Button btn3, btn4;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.registro);
 
-        btn1 = (Button) findViewById(R.id.button5);
-        et1 = (EditText) findViewById(R.id.editText1);
-        et2 = (EditText) findViewById(R.id.editText2);
+        btn3 = (Button) findViewById(R.id.btn3);
+        btn4 = (Button) findViewById(R.id.btn4);
+        et1 = (EditText) findViewById(R.id.et1);
+        et2 = (EditText) findViewById(R.id.et2);
 
-        btn1.setOnClickListener(new View.OnClickListener() {
+        btn3.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String nombre = et1.getText().toString();
-                String apellido = et2.getText().toString();
-
-                registroNuevo(nombre, apellido);
+                Intent miIntent = new Intent(Registro.this, Principal.class);
+                startActivity(miIntent);
             }
         });
 
+        btn4.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                String usuario = et1.getText().toString();
+                String contraseña = et2.getText().toString();
+
+                registroNuevo(usuario, contraseña);
+            }
+        });
+
+
     }
 
-    public void registroNuevo (String nombre, String apellido) {
+    public void registroNuevo (String usuario, String contraseña) {
         //crear la base de datos
-        CrearDB cdb = new CrearDB(this, "DBOscar", null, 1);
+        CrearDB cdb = new CrearDB(this, "DBUsuarios", null, 1);
         //escribe en la base de datos
         SQLiteDatabase database = cdb.getWritableDatabase();
 
@@ -48,10 +59,10 @@ public class Registro extends AppCompatActivity {
         ContentValues values = new ContentValues();
 
         //los datos entre comillas, deben ser identicos a los creados en la tabla
-        values.put("nombre", nombre);
-        values.put("apellido", apellido);
+        values.put("usuario", usuario);
+        values.put("contraseña", contraseña);
 
-        database.insert("Clientes", null, values);
+        database.insert("Usuarios", null, values);
 
         database.close();
 

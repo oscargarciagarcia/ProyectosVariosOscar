@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ProyectoFinalOscar</string>
+    <string name="tituloInicioSesion">Inicio de Sesion Mapple</string>
+    <string name="usuarioInicioSesion">Usuario: </string>
+    <string name="contraseñaInicioSesion">Contraseña: </string>
+    <string name="usuarioRegistro">Usuario: </string>
+    <string name="contraseñaregistro">Contraseña: </string>
+
 </resources>
