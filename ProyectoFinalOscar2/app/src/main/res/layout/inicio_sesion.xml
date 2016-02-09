@@ -1,0 +1,52 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    >
+    //textView Titulo
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv5"
+        android:textAlignment="center"
+        android:textStyle="bold"
+        android:textColor="#3b75e1"
+        android:textSize="25dp"
+        android:text="@string/tituloInicioSesion"
+        />
+    //TextView Usuario
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv6"
+        android:textSize="15px"
+        android:text="@string/usuarioInicioSesion"
+        />
+    //EditText Usuario
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/et3"
+        />
+    //TextView Contraseña
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv7"
+        android:textSize="15px"
+        android:text="@string/contraseñaInicioSesion"
+        />
+    //EditText Contraseña
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/et4"
+        />
+    //Boton Crear
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn5"
+        android:text="Iniciar Sesión"
+        />
+</LinearLayout>
