@@ -11,18 +11,20 @@ public class CrearDB extends SQLiteOpenHelper{
 
     String cadSQL = "CREATE TABLE IF NOT EXISTS Usuarios (" +
             " id INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
-            " usuario TEXT NOT NULL," +
+            " usuario TEXT NOT NULL UNIQUE," +
             " contraseña TEXT NOT NULL)";
 
     String cadSQL1 = "CREATE TABLE IF NOT EXISTS Pedidos (" +
             " idpedido INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT," +
+            " idCliente INTEGER NOT NULL," +
             " imagenordenador INTEGER NOT NULL," +
             " ordenador TEXT NOT NULL," +
             " pulgadas TEXT NOT NULL," +
             " accesorios TEXT ," +
             " unidades REAL NOT NULL," +
-            " precio REAL NOT NULL)";
-            //" FOREIGN KEY (id) REFERENCES Usuarios(id) ON DELETE CASCADE)";
+            " precio REAL NOT NULL," +
+            " FOREIGN KEY (idCliente) REFERENCES Usuarios(id) ON DELETE CASCADE)";
+    //bd.execSQL("PRAGMA foreign_keys = ON");
 
     public CrearDB(Context contexto, String nombre, SQLiteDatabase.CursorFactory almacen, int version){
         super(contexto, nombre, almacen, version);

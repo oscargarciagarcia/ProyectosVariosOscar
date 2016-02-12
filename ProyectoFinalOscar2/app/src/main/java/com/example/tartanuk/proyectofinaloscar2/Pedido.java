@@ -28,8 +28,10 @@ import java.text.DecimalFormat;
 public class Pedido extends AppCompatActivity{
     public Spinner spinner;
     double total, precioOrdenador;
-    String ordenador;
+    String ordenador, textoId;
     Integer imagen;
+    TextView textView9;
+    int idCliente2;
 
     private Ordenadores[] ordenadoresarray = new Ordenadores[]{
             new Ordenadores("MappleBook Air", 900, R.drawable.air2),
@@ -62,6 +64,13 @@ public class Pedido extends AppCompatActivity{
         //variable botton para ver total del pedido
         final Button btn9 = (Button) findViewById(R.id.btn9);
         final Button btn10 = (Button) findViewById(R.id.btn10);
+
+        Bundle recoger1 = getIntent().getExtras();
+        idCliente2 = recoger1.getInt("ID");
+        textView9 = (TextView) findViewById(R.id.textView9);
+        textoId = "ID del cliente: " + idCliente2;
+
+        textView9.setText(textoId);
 
 
         class AdaptadorOrdenadores extends ArrayAdapter<Ordenadores> {
@@ -173,7 +182,7 @@ public class Pedido extends AppCompatActivity{
 
 
 
-                nuevoPedido(ordenador, pulgadas, accesorios, cantidad, total, imagen);
+                nuevoPedido(idCliente2, ordenador, pulgadas, accesorios, cantidad, total, imagen);
             }
 
         });
@@ -182,15 +191,15 @@ public class Pedido extends AppCompatActivity{
             @Override
             public void onClick (View v) {
 
-                Intent miIntent1 = new Intent(Pedido.this, Usuario.class);
-                startActivity(miIntent1);
+                Intent miIntent2 = new Intent(Pedido.this, Usuario.class);
+                startActivity(miIntent2);
 
             }
         });
 
     }
 
-    public void nuevoPedido (String ordenador, String pulgadas, String accesorios, double unidades, double precio, int imagenordenador){
+    public void nuevoPedido (int idCliente2, String ordenador, String pulgadas, String accesorios, double unidades, double precio, int imagenordenador){
 
         //crear la base de datos
         CrearDB cdb = new CrearDB(this, "DBUsuarios", null, 1);
@@ -201,6 +210,7 @@ public class Pedido extends AppCompatActivity{
         ContentValues values = new ContentValues();
 
         //los datos entre comillas, deben ser identicos a los creados en la tabla
+        values.put("idCliente", idCliente2);
         values.put("ordenador", ordenador);
         values.put("pulgadas", pulgadas);
         values.put("accesorios", accesorios);

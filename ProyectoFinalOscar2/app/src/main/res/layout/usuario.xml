@@ -12,7 +12,6 @@
         android:textStyle="bold"
         android:textColor="#3b75e1"
         android:textSize="25dp"
-        android:text="@string/tituloUsuario"
         />
     //boton
     <Button

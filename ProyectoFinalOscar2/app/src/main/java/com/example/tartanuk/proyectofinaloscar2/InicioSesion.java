@@ -19,6 +19,8 @@ public class InicioSesion extends AppCompatActivity {
     EditText et3, et4;
     Button btn5;
     Usuarios[] usuariosarray1;
+    int idCliente;
+    String nombreCliente;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,12 +46,18 @@ public class InicioSesion extends AppCompatActivity {
                 for (Usuarios usuarios1 : usuariosarray){
                     if (usuarios1.getUsuario().equals(usuarioInicioSesion) && usuarios1.getContraseña().equals(contraseñaInicioSesion)){
                         existe = true;
+                        idCliente = usuarios1.getId();
+                        nombreCliente = usuarios1.getUsuario();
                     }
                 }
                 if(existe == false){
                     verToast();
                 }else{
                     Intent miIntent = new Intent(InicioSesion.this, Usuario.class);
+                    Bundle mibundle = new Bundle();
+                    mibundle.putInt("ID", idCliente);
+                    mibundle.putString("NOMBRE", nombreCliente);
+                    miIntent.putExtras(mibundle);
                     startActivity(miIntent);
 
                 }
