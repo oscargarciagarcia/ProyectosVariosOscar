@@ -19,7 +19,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tv6"
-        android:textSize="15px"
+        android:textSize="20px"
+        android:textStyle="bold"
+        android:textColor="#1ed42a"
         android:text="@string/usuarioInicioSesion"
         />
     //EditText Usuario
