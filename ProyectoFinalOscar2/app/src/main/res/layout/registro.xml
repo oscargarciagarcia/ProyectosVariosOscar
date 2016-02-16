@@ -2,6 +2,7 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:gravity="center"
     >
     //TextView Nombre
     <TextView
@@ -11,13 +12,13 @@
         android:textSize="15px"
         android:text="@string/usuarioRegistro"
         />
-    //EditText Nombre
+    //EditText
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/et1"
         />
-    //TextView Apellido
+    //TextView
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -25,10 +26,11 @@
         android:textSize="15px"
         android:text="@string/contraseñaregistro"
         />
-    //EditText Apellido
+    //EditText
     <EditText
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:inputType="textPassword"
         android:id="@+id/et2"
         />
     //Boton Volver a Inicio

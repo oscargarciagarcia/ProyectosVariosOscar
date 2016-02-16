@@ -151,12 +151,5 @@
             android:id="@+id/btn9"
             android:text="GUARDAR"
             />
-        <Button
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:textSize="20px"
-            android:id="@+id/btn10"
-            android:text="Volver"
-            />
     </LinearLayout>
 </LinearLayout>

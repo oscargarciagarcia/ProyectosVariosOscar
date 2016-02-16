@@ -19,6 +19,9 @@
         <activity android:name=".InicioSesion" />
         <activity android:name=".Usuario" />
         <activity android:name=".Pedido" />
+        <activity android:name=".MostrarPedidos" />
+        <activity android:name=".Dibujo" />
+        <activity android:name=".AcercaDe" />
     </application>
 
 </manifest>

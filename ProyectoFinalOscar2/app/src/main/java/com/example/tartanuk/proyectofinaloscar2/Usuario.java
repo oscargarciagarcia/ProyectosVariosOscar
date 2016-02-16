@@ -17,6 +17,7 @@ public class Usuario extends AppCompatActivity{
     String nombreCliente1, titulo;
     TextView tv8;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -47,14 +48,18 @@ public class Usuario extends AppCompatActivity{
             }
         });
 
-        /*btn7.setOnClickListener(new View.OnClickListener() {
+        btn7.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                Intent miIntent2 = new Intent(Usuario.this, MostrarPedidos.class);
+
+                Bundle miBundle2 = new Bundle();
+                miBundle2.putInt("IDC", idCliente1);
 
                 //Pantalla Registro
-                Intent miIntent2 = new Intent(Usuario.this, VerPedidos.class);
+                miIntent2.putExtras(miBundle2);
                 startActivity(miIntent2);
             }
-        });*/
+        });
 
         btn8.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {

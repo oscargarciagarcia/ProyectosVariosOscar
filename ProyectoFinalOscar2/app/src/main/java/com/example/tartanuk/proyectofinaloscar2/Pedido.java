@@ -63,7 +63,7 @@ public class Pedido extends AppCompatActivity{
 
         //variable botton para ver total del pedido
         final Button btn9 = (Button) findViewById(R.id.btn9);
-        final Button btn10 = (Button) findViewById(R.id.btn10);
+        //final Button btn10 = (Button) findViewById(R.id.btn10);
 
         Bundle recoger1 = getIntent().getExtras();
         idCliente2 = recoger1.getInt("ID");
@@ -187,15 +187,6 @@ public class Pedido extends AppCompatActivity{
 
         });
 
-        btn10.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick (View v) {
-
-                Intent miIntent2 = new Intent(Pedido.this, Usuario.class);
-                startActivity(miIntent2);
-
-            }
-        });
 
     }
 
